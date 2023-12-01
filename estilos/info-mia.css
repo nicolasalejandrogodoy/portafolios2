@@ -1,0 +1,157 @@
+body{
+    background-color: rgb(235, 241, 241);
+
+    display: grid;
+    grid-template-columns: 10% 90%; /* Dos columnas de igual tamaño */
+    height: 100vh;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+    width: 100%;
+}
+/*-------------------------- ESTILOS DEL LOGO "NG"  ------------------------*/
+#logo{
+    
+    margin-top: 40%;
+    display: grid;
+    place-content: center;
+    width:150px;
+    
+    
+border: none;
+border-radius: 10%;
+
+box-shadow: -9px 9px 9px 9px rgb(249, 246, 246);
+}
+
+/*------------------------ CONTENEDOR DEL MENU DE NAVEGACION ------------------*/
+
+#contenedor-header{
+    z-index: 2;
+position: fixed;
+display: flex;
+flex-direction: column;
+align-items:center;
+justify-content: space-between;
+background-color: rgb(255, 255, 255);
+height: 100vh;
+width:20%;
+
+}
+#contenedor-header nav{
+box-sizing: border-box;
+
+width: 100%;
+padding-left:5%;
+padding-bottom:50%;
+}
+header nav ul li{
+list-style: none;
+padding:10px;
+transition:letter-spacing 0.5s;
+}
+header nav ul a{
+display: flex;
+align-items: center;
+text-decoration: none;
+color: rgb(164, 160, 160);
+font-size:20px;
+margin :25px  30px;
+
+}
+header nav ul li:hover{
+letter-spacing: 4px;
+
+
+
+}
+header nav ul a:nth-child(3){
+    color:black;
+}
+
+
+
+/*-------------------- CONTENEDOR INFOMACION PERSONAL ---------------------*/
+.contenedor-about{
+    z-index: 1;
+    position: absolute;
+    left:20%;
+    box-sizing: border-box;
+    display:grid;
+    place-content: center;
+    width: 80%;
+    padding: 10%;
+    background-color: rgb(235, 241, 241);
+}
+.contenedor-about h1{
+    font-size: 2.33em;
+    margin:0 0 5% 0 ;
+}
+.contenedor-about h2{
+    font-size: 2em;
+    margin:5% 0 2% 0 ;
+}
+.contenedor-about h3{
+    font-size: 1.2em;
+    color: rgb(83, 79, 79);
+}
+.contenedor-about p{
+ font-size: 1.1em;
+ line-height: 1.5;
+ color: rgb(83, 79, 79);
+}
+
+hr {
+    overflow: visible;
+    width: 100%;
+    margin:5% 0 5% 0;
+}
+
+/*---------------------  lista de herramientas y tecnologias--------------------------*/
+.listas-tecnologias{
+display:flex;
+justify-content: space-between;
+
+}
+.listas-tecnologias ul li{
+    margin:8px;
+    font-size: 1.1em;
+    line-height: 1.5;
+    color: rgb(83, 79, 79);
+}
+.iconos-tecnologias{
+    color: grey;
+    font-size: 1.5em;
+    
+}
+.spring{
+    box-sizing: border-box;
+    padding: 0.1em;
+    font-size: 1em;
+    color:white;
+    background-color:grey;
+    border-radius:35%;
+}
+.hibernate{
+    width:120px;
+    margin:0;
+    padding:0;
+}
+.eclipse{
+width:20px;
+}
+/*------------------ ANIMACION CONTENIDO APARECE DESDE LA ISQUIERDA----------------------*/
+@keyframes deslizarDerecha{
+    from{
+        opacity: 0.3;
+        transform: translateX(-100px);
+    }
+    
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+    }
+    .contenido{
+        animation:deslizarDerecha 1s ease;
+    }

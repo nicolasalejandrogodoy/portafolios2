@@ -1,0 +1,273 @@
+
+:root{
+    --color-fondo-claro:rgb(235, 241, 241);
+}
+body{
+    background-color: var(--color-fondo-claro);
+
+        display: grid;
+        grid-template-columns: 1fr 4fr; /* Dos columnas de igual tamaño */
+        padding: 20px; /* Añade un espacio entre el contenido y los bordes del body */
+        height: 100vh;
+        font-family: sans-serif;
+        letter-spacing: 2px;
+}
+
+/*-------------------------- ESTILOS DEL LOGO "NG"  ------------------------*/
+#logo-anchor{
+    text-decoration: none;
+    color:black;
+
+}
+
+#logo{
+    
+    margin-top: 40%;
+    display: grid;
+    place-content: center;
+    width:150px;
+    
+    
+border: none;
+border-radius: 10%;
+
+}
+
+
+/*------------------------ CONTENEDOR DEL MENU DE NAVEGACION ------------------*/
+
+#contenedor-header{
+    z-index: 2;
+ display: flex;
+ flex-direction: column;
+ align-items:center;
+ justify-content: space-between;
+background: rgb(255, 255, 255);
+height: 100vh;
+&.active{
+    background-color: #090909;
+
+    color:rgb(227, 222, 222);
+}
+
+}
+#contenedor-header nav{
+    box-sizing: border-box;
+   
+    width: 100%;
+    padding-left:5%;
+    padding-bottom:50%;
+}
+header nav ul li{
+    list-style: none;
+ padding:10px;
+ transition:letter-spacing 0.5s;
+}
+.botones-navegacion{
+    display: flex;
+    align-items: center;
+text-decoration: none;
+color: rgb(164, 160, 160);
+font-size:20px;
+margin :25px  30px;
+&.active{
+    color:white;
+}
+
+}
+header nav ul a:first-child{
+    color:black;
+}
+header nav ul li:hover{
+   letter-spacing: 4px;
+
+  
+}
+/*------------------------  CONTENEDOR DE FOTO Y PRESENTACION   ---------------------------*/
+
+.contenedor-presentacion{
+    position: relative;
+    z-index: 1;
+    box-sizing:content-box;
+    display: grid;
+    place-content: center;
+    
+    
+    height: 100vh;
+    /*background-color: rgb(43, 157, 223); */
+    background-color: rgb(201, 201, 201);
+    grid-template-columns:  1fr 1fr;
+ &.active{
+    background: rgb(39, 39, 39);
+
+color:rgb(227, 222, 222);
+ }
+   
+
+}
+
+.contenedor-presentacion .mi-foto{
+ box-sizing: border-box;
+    border-radius:50%;  
+    margin:0% 0%  0% 40% ;
+     border: 4px solid;
+    width:40%;
+  animation: burbuja 8s infinite;
+  filter: grayscale(40%); /* Convierte la imagen a blanco y negro */
+  
+}
+
+
+
+/* ANIMACION EFECTO BURBUJA EN EL BORDE DE LA FOTO*/
+@keyframes burbuja{
+    0% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+    50% {
+        border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+    }
+    
+    100% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+}
+
+.presentacion h1{
+
+
+    font-size: 50px;
+    font-weight: bold;
+    width: 100%;
+ 
+    
+}
+.presentacion{
+    gap:5%;
+    margin-top:10%;
+    height: 100%;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    
+}
+.presentacion p{
+    font-size: 25px;
+    color: rgb(83, 79, 79);
+}
+.parrafo{
+    &.active{
+        color:white;
+    }
+}
+
+/*EMOJIS DE ENLACE A REDES SOCIALES*/
+.contenedor-presentacion ul{
+    display:flex;
+        list-style: none;
+
+}
+.fa-github{color:black;
+    &.active{
+        color:white;
+    }}
+.enlace-redes{
+    text-decoration: none;
+    margin:10px;
+   
+    font-size: 120%;
+}
+
+
+/*------------------ ANIMACION CONTENIDO APARECE DESDE LA IZQUIERDA----------------------*/
+@keyframes deslizarDerecha{
+from{
+    opacity: 0.3;
+    transform: translateX(-100px);
+}
+
+to{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+}
+.contenido{
+    animation:deslizarDerecha 1s ease;
+}
+
+/*--------BOTON MODO OSCURO----------*/
+
+.switch{
+    z-index: 3;
+position: absolute;
+right:5% ; /*posicion del boton en la derecha */
+top: 5%;   /* posicion de abajo */
+
+
+    border-radius: 1000px;
+    border:none;
+    cursor:pointer;
+    display: flex;
+    outline: none;
+    width: 60px;
+   
+
+} 
+.oscuro{
+    background: #e3e0e0;
+}
+.claro{
+    background:rgb(243, 242, 241);
+}
+span{
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+        color: white;
+        background: none;
+    }
+    .span-derecha{
+        justify-content: end;
+    }
+
+.circulito{
+  content: "";
+  display: block;
+ 
+  border-radius: 100px;
+  transition: .3s ease all;
+  box-shadow: 0 0 2px 2px black;
+
+}
+
+.derecha{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    top: 0;
+    left: unset;
+    right: 0;
+ 
+    animation:cirulitoMoove 1s ease ;
+
+}
+.izquierda{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    top: 0;
+    left: 0;
+    right: unset; 
+   
+}
+.fa-sun,.fa-moon{
+    color:black;
+}
