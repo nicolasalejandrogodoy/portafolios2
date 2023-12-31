@@ -1,12 +1,11 @@
 body{
-    background-color: rgb(235, 241, 241);
+    background-color: #1F618D;
 
     display: grid;
-    grid-template-columns: 10% 90%; /* Dos columnas de igual tamaño */
-    height: 100vh;
+    height: 100%;
     font-family: sans-serif;
     letter-spacing: 2px;
-    width: 100%;
+    
 }
 /*-------------------------- ESTILOS DEL LOGO "NG"  ------------------------*/
 #logo{
@@ -20,56 +19,56 @@ body{
 border: none;
 border-radius: 10%;
 
-box-shadow: -9px 9px 9px 9px rgb(249, 246, 246);
 }
 
 /*------------------------ CONTENEDOR DEL MENU DE NAVEGACION ------------------*/
 
+
 #contenedor-header{
     z-index: 2;
-position: fixed;
-display: flex;
-flex-direction: column;
-align-items:center;
-justify-content: space-between;
-background-color: rgb(255, 255, 255);
+ display: flex;
+ position: fixed;
+ width: 20%;
+ flex-direction: column;
+ align-items:center;
+ justify-content: space-between;
+background:#006280;
 height: 100vh;
-width:20%;
+&.active{
+    background-color: #154360;
+}
 
 }
 #contenedor-header nav{
-box-sizing: border-box;
-
-width: 100%;
-padding-left:5%;
-padding-bottom:50%;
+    box-sizing: border-box;
+   
+    width: 100%;
+    padding-left:5%;
+    padding-bottom:50%;
 }
 header nav ul li{
-list-style: none;
-padding:10px;
-transition:letter-spacing 0.5s;
+    list-style: none;
+ padding:10px;
+ transition:letter-spacing 0.5s;
 }
-header nav ul a{
-display: flex;
-align-items: center;
+.botones-navegacion{
+    display: flex;
+    align-items: center;
 text-decoration: none;
 color: rgb(164, 160, 160);
 font-size:20px;
 margin :25px  30px;
-
-}
-header nav ul li:hover{
-letter-spacing: 4px;
-
 
 
 }
 header nav ul a:nth-child(3){
     color:black;
 }
+header nav ul li:hover{
+   letter-spacing: 4px;
 
-
-
+  
+}
 /*-------------------- CONTENEDOR INFOMACION PERSONAL ---------------------*/
 .contenedor-about{
     z-index: 1;
@@ -79,25 +78,32 @@ header nav ul a:nth-child(3){
     display:grid;
     place-content: center;
     width: 80%;
-    padding: 10%;
-    background-color: rgb(235, 241, 241);
+    padding: 10% 5% 10% 10%;
+    &.active{
+        background-color: black;
+    }
 }
-.contenedor-about h1{
-    font-size: 2.33em;
-    margin:0 0 5% 0 ;
-}
-.contenedor-about h2{
+
+.contenedor-about .sub2{
     font-size: 2em;
     margin:5% 0 2% 0 ;
+    color:black;
+    padding-bottom:10px;
+    &.active{
+        color: #AAB7B8;
+    }
 }
-.contenedor-about h3{
+.contenedor-about .sub3{
     font-size: 1.2em;
-    color: rgb(83, 79, 79);
+    padding-bottom: 3%;
+    padding-left: 10px;
+
+    color:#fff;
 }
 .contenedor-about p{
  font-size: 1.1em;
  line-height: 1.5;
- color: rgb(83, 79, 79);
+ color:#fff;
 }
 
 hr {
@@ -116,10 +122,10 @@ justify-content: space-between;
     margin:8px;
     font-size: 1.1em;
     line-height: 1.5;
-    color: rgb(83, 79, 79);
+    color:#fff;
 }
 .iconos-tecnologias{
-    color: grey;
+    color:#fff;
     font-size: 1.5em;
     
 }
@@ -153,5 +159,74 @@ width:20px;
     
     }
     .contenido{
-        animation:deslizarDerecha 1s ease;
+        animation:deslizarDerecha 2s ease;
     }
+    /*--------BOTON MODO OSCURO----------*/
+
+.switch{
+    z-index: 3;
+position: absolute;
+right:5% ; /*posicion del boton en la derecha */
+top: 5%;   /* posicion de abajo */
+
+
+    border-radius: 1000px;
+    border:none;
+    cursor:pointer;
+    display: flex;
+    outline: none;
+    width: 60px;
+   
+
+} 
+
+span{
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+        color: white;
+        background: none;
+    }
+    .span-derecha{
+        justify-content: end;
+    }
+
+.circulito{
+  content: "";
+  display: block;
+ 
+  border-radius: 100px;
+  transition: .3s ease all;
+  box-shadow: 0 0 2px 2px black;
+
+}
+
+.derecha{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    top: 0;
+    left: unset;
+    right: 0;
+ 
+    animation:cirulitoMoove 1s ease ;
+
+}
+.izquierda{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    top: 0;
+    left: 0;
+    right: unset; 
+   
+}
+.fa-sun,.fa-moon{
+    color:black;
+}

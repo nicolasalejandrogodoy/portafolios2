@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+<link rel="stylesheet" href="/estilos/contacto.css">
+<link rel="stylesheet" href="/estilos/reset.css">
+<script src="https://kit.fontawesome.com/deefc3fc29.js" ></script><!-- Font Awesome -->
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  emailjs.init('wtr2fmmJYh4I44ueR')
+</script>
+<title>Nicolas Godoy 🧑‍💻 </title>
+</head>
+<body>
+  <header id="contenedor-header">
+   <a id="logo-anchor"href="index.html"> <div >
+    <img id="logo"src="/archivos/ng.png" alt="">
+   
+  </div></a>
+    <nav>
+  <ul>
+    <a class="botones-navegacion" href="index.html"   ><i class="fa-solid fa-house"></i> <li> Inicio</li></a>
+    <a class="botones-navegacion" href="proyectos.html"  > <i class="fa-solid fa-briefcase"></i> <li> Proyectos</li></a>
+    <a class="botones-navegacion"href="info-mia.html"  ><i class="fa-solid fa-user"></i> <li> Sobre mi</li></a>
+    <a class="botones-navegacion"href="" > <i class="fa-solid fa-envelope"></i> <li> Contacto</li></a>
+  </ul>
+  </nav></header>
+
+<div class="contenidos">
+  <form id="form">
+    <div class="field">
+      <label Class="texto" for="from_name">Nombre</label>
+      <input class="campos" type="text" name="from_name" id="from_name" required>
+    </div>
+    <div class="field">
+      <label Class="texto"for="email_id">Email</label>
+      <input  class="campos"  type="text" name="email_id" id="email_id" required>
+    </div>
+    <div class="field">
+      <label Class="texto"for="message">Mensaje</label>
+      <input class="campos mensaje"  type="text" name="message" id="message" required>
+    </div>
+    
+    
+  <div class="centrar-boton">    <input type="submit" id="button" value="Enviar" >
+  </div>
+  </form>
+
+
+
+
+  <button class="switch" id="switch">
+    <span id="circulito"class="circulito"></span>
+    <span><i class="fa-solid fa-sun"></i></span>
+    <span class="span-derecha"><i class="fa-solid fa-moon"></i></span>
+  </button>
+<script src="/interactividad/contacto.js"></script>
+
+</body>
+
+</html>

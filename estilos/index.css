@@ -11,6 +11,7 @@ body{
         height: 100vh;
         font-family: sans-serif;
         letter-spacing: 2px;
+        
 }
 
 /*-------------------------- ESTILOS DEL LOGO "NG"  ------------------------*/
@@ -42,12 +43,10 @@ border-radius: 10%;
  flex-direction: column;
  align-items:center;
  justify-content: space-between;
-background: rgb(255, 255, 255);
+background:#006280;
 height: 100vh;
 &.active{
-    background-color: #090909;
-
-    color:rgb(227, 222, 222);
+    background-color: #154360;
 }
 
 }
@@ -70,9 +69,7 @@ text-decoration: none;
 color: rgb(164, 160, 160);
 font-size:20px;
 margin :25px  30px;
-&.active{
-    color:white;
-}
+
 
 }
 header nav ul a:first-child{
@@ -95,13 +92,11 @@ header nav ul li:hover{
     
     height: 100vh;
     /*background-color: rgb(43, 157, 223); */
-    background-color: rgb(201, 201, 201);
+    background-color: #F39C12;
     grid-template-columns:  1fr 1fr;
- &.active{
-    background: rgb(39, 39, 39);
-
-color:rgb(227, 222, 222);
- }
+&.active{
+    background-color: black;
+}
    
 
 }
@@ -114,6 +109,9 @@ color:rgb(227, 222, 222);
     width:40%;
   animation: burbuja 8s infinite;
   filter: grayscale(40%); /* Convierte la imagen a blanco y negro */
+  &.active{
+    border-color:#154360;
+  }
   
 }
 
@@ -133,15 +131,7 @@ color:rgb(227, 222, 222);
     }
 }
 
-.presentacion h1{
 
-
-    font-size: 50px;
-    font-weight: bold;
-    width: 100%;
- 
-    
-}
 .presentacion{
     gap:5%;
     margin-top:10%;
@@ -151,17 +141,27 @@ color:rgb(227, 222, 222);
     flex-direction: column;
     justify-content: start;
     
+    
+}
+.nombre{
+    font-size: 50px;
+    font-weight: bold;
+    width: 100%;
+    color:black;
+    &.active{
+        color: #AAB7B8;
+    }
 }
 .presentacion p{
     font-size: 25px;
     color: rgb(83, 79, 79);
 }
+
 .parrafo{
     &.active{
-        color:white;
+        color:#95A5A6 ;
     }
 }
-
 /*EMOJIS DE ENLACE A REDES SOCIALES*/
 .contenedor-presentacion ul{
     display:flex;
@@ -170,13 +170,15 @@ color:rgb(227, 222, 222);
 }
 .fa-github{color:black;
     &.active{
-        color:white;
-    }}
+        color:#154360;
+    }
+    }
 .enlace-redes{
     text-decoration: none;
     margin:10px;
    
     font-size: 120%;
+   
 }
 
 
@@ -194,7 +196,7 @@ to{
 
 }
 .contenido{
-    animation:deslizarDerecha 1s ease;
+    animation:deslizarDerecha 2s ease;
 }
 
 /*--------BOTON MODO OSCURO----------*/
@@ -215,12 +217,7 @@ top: 5%;   /* posicion de abajo */
    
 
 } 
-.oscuro{
-    background: #e3e0e0;
-}
-.claro{
-    background:rgb(243, 242, 241);
-}
+
 span{
     
     display: flex;

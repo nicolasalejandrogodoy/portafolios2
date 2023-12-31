@@ -4,33 +4,32 @@
 
 <head>
 
-<link rel="stylesheet" href="estilos/info-mia.css">
-<link rel="stylesheet" href="estilos/reset.css">
+<link rel="stylesheet" href="/estilos/info-mia.css">
+<link rel="stylesheet" href="/estilos/reset.css">
 <title>Sobre mi</title>
 <script src="https://kit.fontawesome.com/deefc3fc29.js" crossorigin="anonymous"></script><!-- Font Awesome -->
 </head>
 <body>
   <header id="contenedor-header">
-    <a id="logo-anchor"href="index.html"> <div >
-      <img id="logo"src="img/ng.png" alt="">
+    <a id="logo-anchor"href="/contenido/index.html"> <div >
+      <img id="logo"src="/archivos/ng.png" alt="">
      
     </div></a>
     <nav>
-  <ul>
-    <a href="index.html"><i class="fa-solid fa-house"></i> <li> Inicio</li></a>
-    <a href="proyectos.html"> <i class="fa-solid fa-briefcase"></i> <li> Proyectos</li></a>
-    <a href="info-mia.html"><i class="fa-solid fa-user"></i> <li> Sobre mi</li></a>
-    <a href=""> <i class="fa-solid fa-envelope"></i> <li> Contacto</li></a>
-  </ul>
+      <ul>
+        <a class="botones-navegacion" href="index.html"   ><i class="fa-solid fa-house"></i> <li> Inicio</li></a>
+        <a class="botones-navegacion" href="proyectos.html"  > <i class="fa-solid fa-briefcase"></i> <li> Proyectos</li></a>
+        <a class="botones-navegacion"href="info-mia.html"  ><i class="fa-solid fa-user"></i> <li> Sobre mi</li></a>
+        <a class="botones-navegacion"href="contacto.html" > <i class="fa-solid fa-envelope"></i> <li> Contacto</li></a>
+      </ul>
   
   </nav></header>
     <div class="contenedor-about contenido">
-<h1>Sobre mi</h1>
 
-<img id="mi-foto" src="https://media.licdn.com/dms/image/D5603AQEzzEjtxsfC8A/profile-displayphoto-shrink_800_800/0/1678167629565?e=1696464000&v=beta&t=7-_lfmxLuKxyYEGZczAcOykgRkJ5e8cl3YO3v5mWsWs" alt="">
-<h2>Nicolas Godoy</h2>
-<h3>Programador web</h3>
-<hr>
+
+<h2 class="sub2">Nicolas Godoy</h2>
+<h3 class="sub3">Programador web</h3>
+<hr >
 <p>Hola, mi nombre es Nicolas. Trabajo como cocinero a tiempo completo y en mis ratos libres me dedico a aprender.</p>
 
 <br>
@@ -43,7 +42,7 @@
    
 
 <hr>
-<h2><strong>Herramientas y tecnologias que utilizo </strong></h2>
+<h2 class="sub2"><strong>Herramientas y tecnologias que utilizo </strong></h2>
 <br>
 
 <div class="listas-tecnologias">
@@ -68,9 +67,11 @@
 </div>
 </div>
 <button class="switch" id="switch">
+  <span id="circulito"class="circulito "></span>
   <span><i class="fa-solid fa-sun"></i></span>
-  <span><i class="fa-solid fa-moon"></i></span>
+  <span class="span-derecha"><i class="fa-solid fa-moon"></i></span>
 </button>
+<script src="/interactividad/info-mia.js"></script>
 </body>
 
 </html>
