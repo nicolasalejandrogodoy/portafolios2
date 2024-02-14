@@ -18,6 +18,8 @@
     flex-direction: column;
     justify-content: flex-end;
     width: 35%;
+    min-width: 170px;
+
     &.active{
         background-color: #154360;
     }
