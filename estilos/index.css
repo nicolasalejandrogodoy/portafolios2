@@ -1,9 +1,323 @@
 
-:root{
-    --color-fondo-claro:rgb(235, 241, 241);
+                                        /*            PANTALLA MENOR A 900 PX               */
+
+@media only screen and (max-width: 900px) {
+
+
+    /* contenedor header*/
+   
+.contenedor-header{
+box-sizing: content-box;
+position:fixed;
+    z-index: 6;
+left: 0px;
+top: 0px;
+background-color: #006280;
+height: 100vh;
+
+padding-bottom: 25px;
+padding-left: 8%;
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+width: 35%;
+
 }
+
+@keyframes aparece {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }}
+
+.visible{
+    animation-name: aparece;
+    animation-duration: 1.5; /* Duración de la animación */
+    animation-iteration-count: 1; /* La animación se repetirá solo una vez */
+  
+}
+.oculto{
+display: none;
+}
+
+.lista-navegacion a{
+    color:black;
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+    padding-bottom: 50px;
+    text-decoration: none;
+}
+
+/*-------------------------- ESTILOS DEL LOGO "NG"  ------------------------*/
+#logo-anchor{
+    text-decoration: none;
+    color:black;
+position: fixed;
+top:5%;
+left: 7%;
+}
+
+#logo{
+    
+    
+    display: grid;
+    place-content: center;
+    width:150px;
+    
+    
+border: none;
+border-radius: 10%;
+
+}
+
+
+/*------------------------  CONTENEDOR DE FOTO Y PRESENTACION   ---------------------------*/
+
+.contenedor-presentacion{
+    position: relative;
+    z-index: 4;
+    box-sizing:content-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    height: 100vh;
+    /*background-color: rgb(43, 157, 223); */
+    background-color: #F39C12;
+    grid-template-columns:  1fr 1fr;
+&.active{
+    background-color: black;
+}
+   
+
+}
+
+.contenedor-presentacion .mi-foto{
+    background: url('/archivos/perfil-opcion-2.jpg') no-repeat center center;
+    background-size: cover; /* Ajusta el tamaño de la imagen para que se ajuste al contenedor */
+margin-top: 3%;
+    border-radius:50%;  
+    width: 10%;
+    height: 50%;
+    box-shadow: inset 0 0 0 7px rgb(44, 43, 43);    width:40%;
+  animation: burbuja 8s infinite;
+  filter: grayscale(40%); /* Convierte la imagen a blanco y negro */
+  &.active{
+    border-color:#154360;
+
+  }
+}  
+.presentacion{
+    margin-top: 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    align-items: center;
+}
+.nombre{
+    font-size: 35px;
+    font-weight: 800;
+    &.active{
+        color:#95A5A6 ;
+    }
+}
+.programador {
+    margin-top: 3%;
+    width:fit-content;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 1.5s steps(13), /* Animación de escritura */
+               cursor .4s step-end infinite alternate; /* Animación cursor */
+    border-right: 3px solid black;
+    font-size: 19px;
+    &.active{
+        color:#95A5A6 ;
+        border-color:#95A5A6;
+    }
+    
+  }
+  @keyframes cursor {
+    50%{
+        border-color: transparent;
+    }
+  }
+  @keyframes typing {
+    from{
+        width: 0;
+    }
+    to{width: 33%;}
+  }
+.parrafo{
+    text-align: center;
+    margin-top: 5%;
+    font-size: 17px;
+    font-weight: 200;
+    &.active{
+        color:#95A5A6 ;
+    }
+}
+
+.redes{
+    gap:20px;
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+.redes a{
+    color: rgb(43, 17, 135);
+    font-size: 20
+}
+  /* ANIMACION EFECTO BURBUJA EN EL BORDE DE LA FOTO*/
+
+
+@keyframes burbuja{
+    0% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+    50% {
+        border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+    }
+    
+    100% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+}
+/*--------BOTON MODO OSCURO----------*/
+
+.switch{
+    z-index: 5;
+position: fixed;
+right:05% ; /*posicion del boton en la derecha */
+bottom: 5%;   /* posicion de abajo */
+
+
+    border-radius: 100px;
+    border:none;
+    cursor:pointer;
+    display: flex;
+    outline: none;
+    width: 60px;
+   
+
+} 
+
+span{
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+        color: white;
+        background: none;
+    }
+    .span-derecha{
+        justify-content: end;
+    }
+
+.circulito{
+  content: "";
+  display: block;
+ 
+  border-radius: 100px;
+  transition: .3s ease all;
+  box-shadow: 0 0 2px 2px black;
+
+}
+
+.derecha{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    top: 0;
+    left: unset;
+    right: 0;
+ 
+    animation:cirulitoMoove 1s ease ;
+
+}
+.izquierda{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    top: 0;
+    left: 0;
+    right: unset; 
+   
+}
+.fa-sun,.fa-moon{
+
+    
+    color:black;
+}
+/*      iconos redes sociales*/
+.fa-linkedin{
+    color:rgb(0, 54, 232);
+
+}
+.fa-github{
+    color:azure;
+
+   
+    }
+    .fa-file-pdf{
+    border-radius: 100px;
+        color:rgb(0, 21, 209);
+        font-size: 30px;    
+padding:10px;
+    }
+    .fa-brands{
+        text-align: center;
+    font-size: 30px; 
+    padding: 10px;   
+        
+    }
+.enlace-redes{
+    
+    text-decoration: none;
+    margin:10px;
+  
+       
+}
+
+
+
+/*               MENU DESPLEGABLE                 */
+ 
+ 
+  #open, #close{
+    z-index: 6;
+    position: fixed;
+    top:  5%;
+    right:  4%;
+    &.active{
+        color:#fff;
+        background-color: black;
+    }
+ }
+
+ #close, #open{
+    color: black;
+    border: none;
+    font-size: 2em;
+    background-color: #F39C12;
+    font-weight: 900;
+ }
+
+}
+
+
+                                            /*           PANTALLA MAYOR A 900 PX               */
+
+@media only screen and (min-width: 901px) {
 body{
-    background-color: var(--color-fondo-claro);
 
         display: grid;
         grid-template-columns: 1fr 4fr; /* Dos columnas de igual tamaño */
@@ -38,7 +352,7 @@ border-radius: 10%;
 /*------------------------ CONTENEDOR DEL MENU DE NAVEGACION ------------------*/
 
 #contenedor-header{
-    z-index: 2;
+    z-index: 5;
  display: flex;
  flex-direction: column;
  align-items:center;
@@ -84,16 +398,16 @@ header nav ul li:hover{
 
 .contenedor-presentacion{
     position: relative;
-    z-index: 1;
+    z-index: 4;
     box-sizing:content-box;
-    display: grid;
-    place-content: center;
-    
+    display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;    
     
     height: 100vh;
     /*background-color: rgb(43, 157, 223); */
     background-color: #F39C12;
-    grid-template-columns:  1fr 1fr;
 &.active{
     background-color: black;
 }
@@ -102,17 +416,18 @@ header nav ul li:hover{
 }
 
 .contenedor-presentacion .mi-foto{
+    background: url('/archivos/perfil-opcion-2.jpg') no-repeat center center;
+    background-size: cover; /* Ajusta el tamaño de la imagen para que se ajuste al contenedor */
  box-sizing: border-box;
+ box-shadow: inset 0 0 0 7px rgb(44, 43, 43);  
+
     border-radius:50%;  
-    margin:0% 0%  0% 40% ;
-     border: 4px solid;
-    width:40%;
+  
+    width:30%;
+    height: 50%;
   animation: burbuja 8s infinite;
   filter: grayscale(40%); /* Convierte la imagen a blanco y negro */
-  &.active{
-    border-color:#154360;
-  }
-  
+
 }
 
 
@@ -133,17 +448,18 @@ header nav ul li:hover{
 
 
 .presentacion{
-    gap:5%;
-    margin-top:10%;
-    height: 100%;
-    min-width: 300px;
+
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    
+    justify-content: center;
+    align-items: center;
+    padding: 0 5%;
+ 
     
 }
+
 .nombre{
+    text-align: center;
     font-size: 50px;
     font-weight: bold;
     width: 100%;
@@ -151,13 +467,42 @@ header nav ul li:hover{
     &.active{
         color: #AAB7B8;
     }
+}   
+
+#container{
+    display: inline-block;
 }
+  .programador {
+   
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 3s steps(12), /* Animación de escritura */
+               cursor .4s step-end infinite alternate; /* Animación de borrado */
+    border-right: 3px solid black;
+    font-size: 28px;
+    
+  }
+  @keyframes cursor {
+    50%{
+        border-color: transparent;
+    }
+  }
+  @keyframes typing {
+    from{
+        width: 0;
+    }
+    to{width: 17%;}
+  }
 .presentacion p{
     font-size: 25px;
     color: rgb(83, 79, 79);
 }
 
 .parrafo{
+    margin-top: 4%;
+    margin-bottom: 2%;
+    width: 70%;
+    text-align: center;
     &.active{
         color:#95A5A6 ;
     }
@@ -168,29 +513,43 @@ header nav ul li:hover{
         list-style: none;
 
 }
-.fa-github{color:black;
-    &.active{
-        color:#154360;
+.fa-linkedin{
+    color:rgb(0, 54, 232);
+
+}
+.fa-github{
+    color:azure;
+
+   
     }
+    .fa-file-pdf{
+    border-radius: 100px;
+        color:rgb(0, 21, 209);
+        font-size: 30px;    
+padding:10px;
+    }
+    .fa-brands{
+        text-align: center;
+    font-size: 30px; 
+    padding: 10px;   
+        
     }
 .enlace-redes{
+    
     text-decoration: none;
     margin:10px;
-   
-    font-size: 120%;
-   
+  
+       
 }
 
 
 /*------------------ ANIMACION CONTENIDO APARECE DESDE LA IZQUIERDA----------------------*/
 @keyframes deslizarDerecha{
 from{
-    opacity: 0.3;
     transform: translateX(-100px);
 }
 
 to{
-    opacity: 1;
     transform: translateX(0);
 }
 
@@ -202,7 +561,7 @@ to{
 /*--------BOTON MODO OSCURO----------*/
 
 .switch{
-    z-index: 3;
+    z-index: 5;
 position: absolute;
 right:5% ; /*posicion del boton en la derecha */
 top: 5%;   /* posicion de abajo */
@@ -268,3 +627,33 @@ span{
 .fa-sun,.fa-moon{
     color:black;
 }
+
+/* efecto background*/
+.bg2{
+    z-index: 3;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #154360;
+    animation: deslizarDerecha 1.5s ease;
+}
+.bg3{
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:#1F618D;
+    animation: deslizarDerecha 1s ease;
+
+}
+.bg4{
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:#3697e6;
+
+}
+}
+
+

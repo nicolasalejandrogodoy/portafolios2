@@ -1,11 +1,190 @@
+@media only screen and (max-width: 900px) {
+   
+    
+        /* contenedor header*/
+       
+    .contenedor-header{
+    box-sizing: content-box;
+    position:fixed;
+        z-index: 6;
+    left: 0px;
+    top: 0px;
+    background-color: #006280;
+    height: 100vh;
+    
+    padding-bottom: 25px;
+    padding-left: 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 35%;
+    &.active{
+        background-color: #154360;
+    }
+    }
+    
+    @keyframes aparece {
+        from{
+            opacity: 0;
+        }
+        to{
+            opacity: 1;
+        }}
+    
+    .visible{
+        animation-name: aparece;
+        animation-duration: 1.5; /* Duración de la animación */
+        animation-iteration-count: 1; /* La animación se repetirá solo una vez */
+      
+    }
+    .oculto{
+    display: none;
+    }
+    
+    .lista-navegacion a{
+        color:black;
+        display: flex;
+        flex-direction: row;
+        gap:10px;
+        padding-bottom: 50px;
+        text-decoration: none;
+    }
+    
+    /*-------------------------- ESTILOS DEL LOGO "NG"  ------------------------*/
+    #logo-anchor{
+        text-decoration: none;
+        color:black;
+    position: fixed;
+    top:5%;
+    left: 7%;
+    }
+    
+    #logo{
+        
+        
+        display: grid;
+        place-content: center;
+        width:150px;
+        
+        
+    border: none;
+    border-radius: 10%;
+    
+    }
+    
+    /*---------------------CONTENEDOR PROYECTOS-------------------------*/
+.contenedor-proyectos{
+    z-index: 3;
+background-color: azure;
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    &.active{
+        background-color: black;
+    }
+}
+    
+    /*--------BOTON MODO OSCURO----------*/
+    
+    .switch{
+        z-index: 5;
+    position: fixed;
+    right:05% ; /*posicion del boton en la derecha */
+    bottom: 5%;   /* posicion de abajo */
+    
+    
+        border-radius: 100px;
+        border:none;
+        cursor:pointer;
+        display: flex;
+        outline: none;
+        width: 60px;
+       
+    
+    } 
+    
+    span{
+        
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        line-height: 30px;
+        width: 30px;
+        height: 30px;
+            color: white;
+            background: none;
+        }
+        .span-derecha{
+            justify-content: end;
+        }
+    
+    .circulito{
+      content: "";
+      display: block;
+     
+      border-radius: 100px;
+      transition: .3s ease all;
+      box-shadow: 0 0 2px 2px black;
+    
+    }
+    
+    .derecha{
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background: #fff;
+        top: 0;
+        left: unset;
+        right: 0;
+     
+        animation:cirulitoMoove 1s ease ;
+    
+    }
+    .izquierda{
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background: #fff;
+        top: 0;
+        left: 0;
+        right: unset; 
+       
+    }
+    .fa-sun,.fa-moon{
+    
+        
+        color:black;
+    } /*               MENU DESPLEGABLE                 */
+     
+     
+      #open, #close{
+        z-index: 6;
+        position: fixed;
+        top:  5%;
+        right:  4%;
+        background-color: azure;
+
+        &.active{
+            color:#fff;
+            background-color: black;
+        }
+     }
+    
+     #close, #open{
+        color: black;
+        border: none;
+        font-size: 2em;
+        font-weight: 900;
+     }
+    
+    }
+    @media only screen and (min-width: 901px) {
 body{
    
-background-color: #154360;
         display: grid;
         grid-template-columns: 1fr 4fr; /* Dos columnas de igual tamaño */
         padding: 20px; /* Añade un espacio entre el contenido y los bordes del body */
         height: 100vh;
-        font-family: sans-serif;
         letter-spacing: 2px;
 }
 
@@ -26,13 +205,16 @@ background-color: #154360;
 /*------------------------ CONTENEDOR DEL MENU DE NAVEGACION ------------------*/
 
 #contenedor-header{
-    z-index: 2;
+    z-index: 4;
  display: flex;
  flex-direction: column;
  align-items:center;
  justify-content: space-between;
  background:#006280;
  height: 100vh;
+ &.active{
+    background-color: #154360;
+}
 
 }
 #contenedor-header nav{
@@ -68,32 +250,34 @@ header nav ul li:hover{
 /*----------------------------------------------*/
 /*---------------------CONTENEDOR PROYECTOS-------------------------*/
 .contenedor-proyectos{
-    background-color: blueviolet;
+    z-index: 3;
+    background-color: #30393f;
     display: grid;
-    margin:10%;     
-    width: 80%;
+    width: 100%;
+    height: 100%;
+    &.active{
+        background-color: black;
+    }
 }
 /*------------------ ANIMACION CONTENIDO APARECE DESDE LA ISQUIERDA----------------------*/
 @keyframes deslizarDerecha{
     from{
-        opacity: 0.3;
         transform: translateX(-100px);
     }
     
     to{
-        opacity: 1;
         transform: translateX(0);
     }
     
     }
     .contenido{
-        animation:deslizarDerecha 1s ease;
+        animation:deslizarDerecha 2s ease;
     }
 
     /*--------BOTON MODO OSCURO----------*/
 
 .switch{
-    z-index: 3;
+    z-index: 5;
 position: absolute;
 right:5% ; /*posicion del boton en la derecha */
 top: 5%;   /* posicion de abajo */
@@ -108,13 +292,8 @@ top: 5%;   /* posicion de abajo */
    
 
 } 
-.oscuro{
-    background: #e3e0e0;
-}
-.claro{
-    background:rgb(243, 242, 241);
-}
-span{
+
+.span-switch{
     
     display: flex;
     align-items: center;
@@ -164,3 +343,32 @@ span{
 .fa-sun,.fa-moon{
     color:black;
 }
+
+
+/* efecto background*/
+.bg2{
+    z-index: 3;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #154360;
+    animation: deslizarDerecha 1.5s ease;
+}
+.bg3{
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:#1F618D;
+    animation: deslizarDerecha 1s ease;
+
+}
+.bg4{
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:#3697e6;
+
+}
+    }

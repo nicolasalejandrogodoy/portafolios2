@@ -1,12 +1,10 @@
-const btn = document.getElementById('button');
 const botonOscuro = document.getElementById("switch");
-
-const fondoContenido = document.querySelector('.contenidos');
-const circulito = document.getElementById("circulito");
-const nav = document.querySelector("#contenedor-header");
-const colorLabel = document.querySelectorAll('.texto'); 
 const abrir = document.querySelector('#open');
 const cerrar = document.querySelector('#close');
+const fondoContenido = document.querySelector('.contenedor-proyectos');
+const circulito = document.getElementById("circulito");
+const nav = document.querySelector("#contenedor-header");
+
 const modoOscuroActivado = localStorage.getItem("modoOscuro") === "activado";
 if (modoOscuroActivado) {
     circulito.classList.add("izquierda"); 
@@ -14,9 +12,8 @@ if (modoOscuroActivado) {
     nav.classList.add("active");
     abrir.classList.add('active');
     cerrar.classList.add('active');
-    colorLabel.forEach(label => {
-      label.classList.add('active');
-  });
+
+    
 }else{
     circulito.classList.add("derecha");   
 }
@@ -32,45 +29,20 @@ function darkMode() {
       localStorage.setItem("modoOscuro", "activado");
       nav.classList.add("active");
       fondoContenido.classList.add('active');
-      colorLabel.forEach(label => {
-        label.classList.add('active');
-    });
-    abrir.classList.add('active');
+      abrir.classList.add('active');
     cerrar.classList.add('active');
+
   } else {
       circulito.classList.add("derecha");
       circulito.classList.remove("izquierda");
       localStorage.setItem("modoOscuro", "desactivado");
       nav.classList.remove("active");
       fondoContenido.classList.remove('active');
-      colorLabel.forEach(label => {
-        label.classList.remove('active');
-    });
-    abrir.classList.remove('active');
-    cerrar.classList.remove('active');
+      abrir.classList.remove('active');
+      cerrar.classList.remove('active');
+
      
   }
 }
 
 botonOscuro.addEventListener('click', darkMode);
-
-
-
-document.getElementById('form')
- .addEventListener('submit', function(event) {
-   event.preventDefault();
-
-   btn.value = 'Enviando...';
-
-   const serviceID = 'default_service';
-   const templateID = 'template_0tzxak5';
-
-   emailjs.sendForm(serviceID, templateID, this)
-    .then(() => {
-      btn.value = 'Enviar';
-      alert('Enviado!');
-    }, (err) => {
-      btn.value = 'Enviar';
-      alert(JSON.stringify(err));
-    });
-});
