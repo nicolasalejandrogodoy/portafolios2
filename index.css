@@ -96,7 +96,7 @@ border-radius: 10%;
 }
 
 .contenedor-presentacion .mi-foto{
-    background: url('/archivos/perfil-opcion-2.jpg') no-repeat center center;
+    background: url('perfil-opcion-2.jpg') no-repeat center center;
     background-size: cover; /* Ajusta el tamaño de la imagen para que se ajuste al contenedor */
 margin-top: 3%;
     border-radius:50%;  
@@ -416,7 +416,7 @@ align-items: center;
 }
 
 .contenedor-presentacion .mi-foto{
-    background: url('/archivos/perfil-opcion-2.jpg') no-repeat center center;
+    background: url('perfil-opcion-2.jpg') no-repeat center center;
     background-size: cover; /* Ajusta el tamaño de la imagen para que se ajuste al contenedor */
  box-sizing: border-box;
  box-shadow: inset 0 0 0 7px rgb(44, 43, 43);  
@@ -653,6 +653,10 @@ span{
     height: 100%;
     background:#3697e6;
 
+}
+
+#close, #open{
+    display: none;
 }
 }
 

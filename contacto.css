@@ -288,7 +288,7 @@ margin :25px  30px;
 
 
 }
-header nav ul a:nth-child(4){
+header nav ul a:nth-child(3){
     color:black;
 }
 header nav ul li:hover{
@@ -471,5 +471,8 @@ span{
     width: 100%;
     height: 100%;
     background:#3697e6;
-
-}}
+}
+#close, #open{
+    display: none;
+}
+}

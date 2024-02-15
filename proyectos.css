@@ -373,4 +373,6 @@ top: 5%;   /* posicion de abajo */
     background:#3697e6;
 
 }
-    }
+#close, #open{
+    display: none;
+}   }
